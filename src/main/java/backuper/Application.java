@@ -26,17 +26,15 @@ public class Application {
   public static void main(String[] args) throws IOException {
 
 
-    if (args.length <= 1) {
+    if (args.length <= 0) {
       logger.error("Parameters missing.");
-      logger.error("Syntax: java -jar backuper.jar <includes filename>");
+      logger.error("Syntax: java -jar backuper.jar <configfile>");
       System.exit(1);
     }
 
     String includesFilename = args[0];
 
     logger.info("Starting backup...");
-
-    Set<Object> includesList = new LinkedHashSet<>();
 
     Yaml yaml = new Yaml();
 
@@ -90,8 +88,9 @@ public class Application {
         for (String file : files) {
           File originFile = new File(basePath + "/" + file);
           File destinationFile = new File(destinationDir + "/" + file);
-          String destinationPath = FilenameUtils.getPrefix(destinationFile.getPath()) + FilenameUtils.getPath(destinationFile.getPath());
-          
+          String destinationPath = FilenameUtils.getPrefix(destinationFile.getPath())
+              + FilenameUtils.getPath(destinationFile.getPath());
+
           Files.createDirectories(Paths.get(destinationPath));
           logger.info(" - Copying: <{}> to <{}>.", originFile, destinationFile);
           Files.copy(originFile.toPath(), destinationFile.toPath());
@@ -111,9 +110,9 @@ public class Application {
     return scanner.getIncludedFiles();
   }
 
-  public static void promptEnterKey(){
+  public static void promptEnterKey() {
     System.out.println("Press \"ENTER\" to continue...");
     Scanner scanner = new Scanner(System.in);
     scanner.nextLine();
- }
+  }
 }
