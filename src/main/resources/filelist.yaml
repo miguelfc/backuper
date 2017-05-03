@@ -1,0 +1,12 @@
+\\servername\c$\Users\miguelfc\MyVeryImportantFolder:
+  destination: c:\temp\backup\MyVeryImportantFolder
+  files:
+  - "**/*"
+  - file.json
+
+\\anotherServer\d$\Users\nobody\Another Folder:
+  destination: c:\temp\backup\Different Name
+  files:
+  - directory/example*
+  - other*/.json
+  
