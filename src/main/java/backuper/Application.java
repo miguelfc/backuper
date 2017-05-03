@@ -37,8 +37,6 @@ public class Application {
     logger.info("Starting backup...");
 
     Yaml yaml = new Yaml();
-
-    System.out.println(yaml.dump(yaml.load(new FileInputStream(new File(includesFilename)))));
     Map<String, Map<String, Object>> groups = (Map<String, Map<String, Object>>) yaml
         .load(new FileInputStream(new File(includesFilename)));
 
