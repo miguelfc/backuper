@@ -70,7 +70,6 @@ public class Application {
 
     if (isCheckOk) {
       logger.info("Checks passed.");
-      promptEnterKey();
       logger.info("");
       logger.info("Starting copy operation.");
       for (String basePath : groups.keySet()) {

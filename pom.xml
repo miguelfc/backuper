@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>backuper</groupId>
 	<artifactId>backuper</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<name>Simple File Backuper</name>
 	<description>Used to backup local and network share files</description>
 	<properties>
